@@ -8,7 +8,8 @@ const boxenOptions = {
     margin: 1,
     borderStyle: "round",
     borderColor: "green",
-    backgroundColor: "#555555"
+    backgroundColor: "#555555",
+    float: 'center'
 };
 
 export const WelcomeMessage = boxen( greeting, boxenOptions );
