@@ -1,0 +1,30 @@
+{
+  "name": "terminal-market-watch",
+  "version": "1.0.0",
+  "description": "Market Watch for terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batrashubham/terminal-market-watch.git"
+  },
+  "keywords": [
+    "stocks",
+    "stock",
+    "trading",
+    "trade",
+    "market watch",
+    "terminal trading",
+    "stock",
+    "exchange",
+    "market"
+  ],
+  "author": "Shubham Batra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/batrashubham/terminal-market-watch/issues"
+  },
+  "homepage": "https://github.com/batrashubham/terminal-market-watch#readme"
+}
