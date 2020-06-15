@@ -39,6 +39,7 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "@types/yargs": "^15.0.5"
+    "@types/yargs": "^15.0.5",
+    "jshint": "^2.11.1"
   }
 }
