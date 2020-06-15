@@ -13,4 +13,4 @@ const boxenOptions = {
 };
 
 // @ts-ignore
-export const WelcomeMessage = boxen( greeting, boxenOptions );
+export const Title = boxen( greeting, boxenOptions );
