@@ -2,7 +2,7 @@
   "name": "terminal-market-watch",
   "version": "1.0.0",
   "description": "Market Watch for terminal",
-  "main": "bin/index.ts",
+  "main": "bin/App.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/batrashubham/terminal-market-watch#readme",
   "bin": {
-    "tmw": "./bin/index.js"
+    "tmw": "./bin/app.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
