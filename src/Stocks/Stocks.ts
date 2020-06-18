@@ -1,30 +1,5 @@
 import axios from 'axios';
-
-interface Result{
-    result: Array<StockData>;
-}
-
-interface QuoteResponse{
-    quoteResponse: Result;
-}
-
-interface StockData{
-    currency: string;
-    shortName: string;
-    longName: string;
-    market: string;
-    fullExchangeName: string;
-    regularMarketPrice: number;
-    regularMarketDayHigh: number;
-    regularMarketDayLow: number;
-    regularMarketOpen: number;
-    marketCap: number;
-    exchangeDataDelayedBy: number;
-    fiftyTwoWeekRange: string;
-    sharesOutstanding: number;
-    fiftyDayAverage: number;
-    symbol: string;
-}
+import { QuoteResponse } from './Types';
 
 const yahooFinanceUrl = 'https://query1.finance.yahoo.com/v7/finance/quote';
 

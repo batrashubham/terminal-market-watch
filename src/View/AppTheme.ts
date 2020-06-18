@@ -6,5 +6,5 @@ export const BoxTheme = {
 }
 
 export const TextColors = {
-    TitleText: chalk.greenBright,
+    Primary: chalk.greenBright,
 }

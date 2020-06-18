@@ -1,5 +1,5 @@
 import { TextColors } from "./AppTheme";
 
-export function getTitleText(): string {
-    return TextColors.TitleText.bold("Terminal Market Watch _-^-_");
+export function getPrimaryColoredText(text: string): string {
+    return TextColors.Primary.bold(text);
 }
