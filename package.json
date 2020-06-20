@@ -2,11 +2,23 @@
   "name": "terminal-market-watch",
   "version": "1.0.0",
   "description": "Market Watch for terminal",
-  "main": "bin/App.ts",
+  "author": "Shubham Batra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/batrashubham/terminal-market-watch/issues"
+  },
+  "homepage": "https://github.com/batrashubham/terminal-market-watch#readme",
+  "bin": {
+    "tmw": "./bin/app.js"
+  },
+  "main": "bin/app.ts",
   "scripts": {
     "test": "jest",
+    "test:cov": "jest --coverage",
+    "view:coverage": "serve coverage/lcov-report",
     "build": "webpack --config webpack.config.js",
-    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
+    "clean": "rm -rf coverage/*"
   },
   "repository": {
     "type": "git",
@@ -34,15 +46,6 @@
     "exchange",
     "market"
   ],
-  "author": "Shubham Batra",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/batrashubham/terminal-market-watch/issues"
-  },
-  "homepage": "https://github.com/batrashubham/terminal-market-watch#readme",
-  "bin": {
-    "tmw": "./bin/app.js"
-  },
   "dependencies": {
     "axios": "^0.19.2",
     "boxen": "^4.2.0",
