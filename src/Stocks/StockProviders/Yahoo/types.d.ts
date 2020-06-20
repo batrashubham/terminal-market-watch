@@ -1,4 +1,4 @@
-export interface StockData {
+export interface YahooStockData {
     currency: string;
     shortName: string;
     longName: string;
@@ -16,10 +16,10 @@ export interface StockData {
     symbol: string;
 }
 
-export interface Result {
-    result: Array<StockData>;
+export interface YahooResult {
+    result: Array<YahooStockData>;
 }
 
-export interface QuoteResponse {
-    quoteResponse: Result;
+export interface YahooQuoteResponse {
+    quoteResponse: YahooResult;
 }

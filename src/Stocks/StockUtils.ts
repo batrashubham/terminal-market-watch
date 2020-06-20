@@ -1,6 +1,6 @@
-import { StockData } from './types';
+import { YahooStockData } from './StockProviders/Yahoo/types';
 
-export function stringifyStock(stock: StockData): string {
+export function stringifyStock(stock: YahooStockData): string {
     return `Name: ${stock.longName}\n
         Symbol: ${stock.symbol}\n
         Currency: ${stock.currency}\n
