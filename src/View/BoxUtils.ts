@@ -1,5 +1,5 @@
-import boxen, { BorderStyle } from "boxen";
-import { BoxTheme } from "./AppTheme";
+import boxen, { BorderStyle } from 'boxen';
+import { BoxTheme } from './appTheme';
 
 const boxenOptions = {
     padding: 1,
@@ -7,10 +7,10 @@ const boxenOptions = {
     borderStyle: BorderStyle.Round,
     borderColor: BoxTheme.BorderColor,
     backgroundColor: BoxTheme.BgColor,
-    float: 'center'
+    float: 'center',
 };
 
-export function getTextWrappedInBox(text: string){
+export function getTextWrappedInBox(text: string) {
     //@ts-ignore
-    return boxen(text,boxenOptions);
+    return boxen(text, boxenOptions);
 }

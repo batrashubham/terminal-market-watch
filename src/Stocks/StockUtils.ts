@@ -1,4 +1,4 @@
-import { StockData } from "./Types";
+import { StockData } from './types';
 
 export function stringifyStock(stock: StockData): string {
     return `Name: ${stock.longName}\n

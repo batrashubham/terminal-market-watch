@@ -39,11 +39,17 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "@types/yargs": "^15.0.5",
     "@types/axios": "^0.14.0",
     "@types/boxen": "^3.0.1",
     "@types/chalk": "^2.2.0",
     "@types/node": "^14.0.13",
-    "jshint": "^2.11.1"
+    "@types/yargs": "^15.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^7.3.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jshint": "^2.11.1",
+    "prettier": "^2.0.5"
   }
 }

@@ -1,34 +1,30 @@
 #!/usr/bin/env node
-import Options from './Options'
-import { getPrimaryColoredText } from './View/TextUtils';
-import { getTextWrappedInBox } from './View/BoxUtils';
-import { fetchStockData } from './Stocks/Stocks';
-import { AppTitle } from './Constants/Constants';
-import { QuoteResponse } from './Stocks/Types';
-import { stringifyStock } from './Stocks/StockUtils';
+import Options from './options';
+import { getPrimaryColoredText } from './View/textUtils';
+import { getTextWrappedInBox } from './View/boxUtils';
+import { fetchStockData } from './Stocks/stocks';
+import { AppTitle } from './Constants/constants';
+import { QuoteResponse } from './Stocks/types';
+import { stringifyStock } from './Stocks/stockUtils';
 
 class App {
-
     run() {
         const options = Options.getOptions();
 
         this.printAppTitle();
-
-        fetchStockData(options.stock as string)
-            .then(this.displayStockData());
-
+        fetchStockData(options.stock as string).then(this.displayStockData());
     }
 
     private displayStockData(): ((value: QuoteResponse) => void | PromiseLike<void>) | null | undefined {
-        return sd => {
-            var res = sd.quoteResponse.result[0];
-            var stringifiedStock = stringifyStock(res);
+        return (sd) => {
+            const res = sd.quoteResponse.result[0];
+            const stringifiedStock = stringifyStock(res);
             console.log(getTextWrappedInBox(stringifiedStock));
         };
     }
 
     private printAppTitle() {
-        var title = getPrimaryColoredText(AppTitle);
+        const title = getPrimaryColoredText(AppTitle);
         console.log(getTextWrappedInBox(title));
     }
 }

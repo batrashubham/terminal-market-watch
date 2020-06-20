@@ -1,4 +1,4 @@
-export interface StockData{
+export interface StockData {
     currency: string;
     shortName: string;
     longName: string;
@@ -16,10 +16,10 @@ export interface StockData{
     symbol: string;
 }
 
-export interface Result{
+export interface Result {
     result: Array<StockData>;
 }
 
-export interface QuoteResponse{
+export interface QuoteResponse {
     quoteResponse: Result;
 }
