@@ -28,7 +28,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "jest"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
@@ -44,6 +44,11 @@
     "market watch",
     "terminal trading",
     "stock",
+    "stock exchange",
+    "invest",
+    "investment",
+    "investing",
+    "watch list",
     "exchange",
     "market"
   ],
