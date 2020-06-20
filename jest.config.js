@@ -3,6 +3,8 @@ module.exports = {
     transform: {
         '^.+\\.ts?$': 'ts-jest',
     },
+    collectCoverageFrom: ['src/**/*.ts'],
+    coverageDirectory: 'coverage',
     coverageThreshold: {
         global: {
             branches: 80,

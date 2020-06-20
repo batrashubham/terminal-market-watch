@@ -1,7 +1,7 @@
 {
   "name": "terminal-market-watch",
   "version": "1.0.0",
-  "description": "Market Watch for terminal",
+  "description": "Market Watch for linux/unix terminal",
   "author": "Shubham Batra",
   "license": "MIT",
   "bugs": {
@@ -13,6 +13,7 @@
   },
   "main": "bin/app.ts",
   "scripts": {
+    "prebuild": "npm run lint && npm run test",
     "test": "jest",
     "test:cov": "jest --coverage",
     "view:coverage": "serve coverage/lcov-report",
