@@ -1,4 +1,4 @@
-import YahooStockProvider, { YahooFinanceUrl } from '../../../../src/Stocks/StockProviders/Yahoo/yahooStockProvider';
+import YahooStockProvider, { YahooFinanceUrl } from '../../../../src/Stocks/StockProviders/Yahoo/YahooStockProvider';
 import axios from 'axios';
 
 jest.mock('axios');

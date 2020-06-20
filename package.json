@@ -19,7 +19,7 @@
     "view:coverage": "serve coverage/lcov-report",
     "build": "webpack --config webpack.config.js",
     "lint": "eslint '*/**/*.{js,ts}' --quiet --fix",
-    "clean": "rm -rf coverage/*"
+    "clean": "rm -rf coverage/* bin/*"
   },
   "repository": {
     "type": "git",
