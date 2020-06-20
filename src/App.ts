@@ -2,7 +2,7 @@
 import Options from './Options'
 import { getPrimaryColoredText } from './View/TextUtils';
 import { getTextWrappedInBox } from './View/BoxUtils';
-import Stocks from './Stocks/Stocks';
+import { fetchStockData } from './Stocks/Stocks';
 import { AppTitle } from './Constants/Constants';
 import { QuoteResponse } from './Stocks/Types';
 import { stringifyStock } from './Stocks/StockUtils';
@@ -14,7 +14,7 @@ class App {
 
         this.printAppTitle();
 
-        Stocks.getStockData(options.stock as string)
+        fetchStockData(options.stock as string)
             .then(this.displayStockData());
 
     }
