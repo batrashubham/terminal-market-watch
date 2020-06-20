@@ -1,5 +1,5 @@
-import { YahooQuoteResponse } from './Yahoo/types';
+import { StockData } from './types';
 
 export interface StockProvider {
-    fetchStockData(stockCode: string): Promise<YahooQuoteResponse>;
+    fetchStockData(stockCode: string): Promise<StockData>;
 }

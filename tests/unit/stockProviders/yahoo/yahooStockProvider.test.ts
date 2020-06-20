@@ -8,7 +8,9 @@ const stockCode = 'AAPL';
 
 const result = {
     data: {
-        quoteResponse: null,
+        quoteResponse: {
+            result: [{}],
+        },
     },
 };
 
