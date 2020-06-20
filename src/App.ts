@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import Options from './options';
 import { getPrimaryColoredText } from './View/textUtils';
 import { getTextWrappedInBox } from './View/boxUtils';
