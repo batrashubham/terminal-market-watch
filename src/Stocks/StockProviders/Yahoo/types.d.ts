@@ -1,3 +1,5 @@
+import { ProviderStockData } from '../types';
+
 export interface YahooStockData {
     currency: string;
     shortName: string;
@@ -20,6 +22,6 @@ export interface YahooResult {
     result: Array<YahooStockData>;
 }
 
-export interface YahooQuoteResponse {
+export interface YahooQuoteResponse extends ProviderStockData {
     quoteResponse: YahooResult;
 }

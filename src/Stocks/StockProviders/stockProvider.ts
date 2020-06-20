@@ -1,5 +1,5 @@
 import { StockData } from './types';
 
-export interface StockProvider {
+export default interface StockProvider {
     fetchStockData(stockCode: string): Promise<StockData>;
 }

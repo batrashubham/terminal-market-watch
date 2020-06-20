@@ -15,3 +15,5 @@ export interface StockData {
     fiftyDayAverage: number;
     symbol: string;
 }
+
+export abstract class ProviderStockData {}
