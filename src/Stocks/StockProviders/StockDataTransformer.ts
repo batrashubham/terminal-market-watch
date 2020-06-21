@@ -1,5 +1,5 @@
 import { StockData, ProviderStockData } from './types';
 
 export default interface StockDataTransformer {
-    transform(src: ProviderStockData): StockData;
+    transform(src: ProviderStockData): Promise<StockData>;
 }

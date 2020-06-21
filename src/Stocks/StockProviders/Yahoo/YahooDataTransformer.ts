@@ -3,10 +3,10 @@ import { ProviderStockData, StockData } from '../types';
 import { YahooQuoteResponse } from './types';
 
 export default class YahooDataTransformer implements StockDataTransformer {
-    transform(src: ProviderStockData): StockData {
+    transform(src: ProviderStockData): Promise<StockData> {
         const yahooData = src as YahooQuoteResponse;
-        return {
-            ...yahooData.quoteResponse.result[0],
-        };
+        return Promise.resolve({
+            ...yahooData.quoteResponse?.result[0],
+        });
     }
 }
