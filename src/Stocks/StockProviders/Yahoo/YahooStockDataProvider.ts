@@ -1,16 +1,20 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import StockProvider from '../StockProvider';
+import { injectable, inject } from 'inversify';
+import StockDataProvider from '../StockDataProvider';
 import { YahooQuoteResponse } from './types';
 import { StockData } from '../types';
-import YahooDataTransformer from './YahooDataTransformer';
+import StockDataTransformer from '../StockDataTransformer';
+import { TYPES } from '../../../DI/types';
 
 export const YahooFinanceUrl = 'https://query1.finance.yahoo.com/v7/finance/quote';
 
-class YahooStockProvider implements StockProvider {
+@injectable()
+class YahooStockDataProvider implements StockDataProvider {
+    constructor(@inject(TYPES.StockDataTransformer) private stockDataTransformer: StockDataTransformer) {}
+
     public async fetchStockData(stockCode: string): Promise<StockData> {
         const result = await axios.get<YahooQuoteResponse>(YahooFinanceUrl, this.buildQueryParams(stockCode));
-        const yahooTransformer = new YahooDataTransformer();
-        return yahooTransformer.transform(result.data);
+        return this.stockDataTransformer.transform(result.data);
     }
 
     private buildQueryParams(stockCode: string): AxiosRequestConfig {
@@ -22,4 +26,4 @@ class YahooStockProvider implements StockProvider {
         };
     }
 }
-export default YahooStockProvider;
+export default YahooStockDataProvider;

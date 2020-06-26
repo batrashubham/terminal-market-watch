@@ -9,9 +9,9 @@
   },
   "homepage": "https://github.com/batrashubham/terminal-market-watch#readme",
   "bin": {
-    "tmw": "./bin/app.js"
+    "tmw": "./bin/index.js"
   },
-  "main": "bin/app.ts",
+  "main": "bin/index.ts",
   "scripts": {
     "prebuild": "npm run lint && npm run test",
     "test": "jest",
@@ -56,6 +56,8 @@
     "axios": "^0.19.2",
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13",
     "typescript": "^3.9.5",
     "yargs": "^15.3.1"
   },

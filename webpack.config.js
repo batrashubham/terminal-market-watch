@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'production',
-    entry: './src/app.ts',
+    entry: './src/index.ts',
     module: {
         rules: [
             {
@@ -19,7 +19,7 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        filename: 'app.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'bin'),
     },
     target: 'node',
