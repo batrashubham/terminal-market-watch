@@ -13,5 +13,14 @@ module.exports = {
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
         // e.g. "@typescript-eslint/explicit-function-return-type": "off",
         'lines-between-class-members': ['error', 'always'],
+        '@typescript-eslint/explicit-function-return-type': [
+            'error',
+            {
+                allowExpressions: true,
+                allowTypedFunctionExpressions: true,
+                allowHigherOrderFunctions: true,
+                allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+            },
+        ],
     },
 };

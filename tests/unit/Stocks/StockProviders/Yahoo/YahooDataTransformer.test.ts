@@ -1,4 +1,4 @@
-import { StockData } from '../../../../../src/App/Stocks/StockProviders/types';
+import { StockQuote } from '../../../../../src/App/Stocks/StockProviders/types';
 import YahooDataTransformer from '../../../../../src/App/Stocks/StockProviders/Yahoo/YahooDataTransformer';
 import { YahooQuoteResponse } from '../../../../../src/App/Stocks/StockProviders/Yahoo/types';
 
@@ -27,7 +27,7 @@ describe('YahooDataTransformer', () => {
         },
     };
 
-    const expected: StockData = {
+    const expected: StockQuote = {
         currency: 'inr',
         longName: 'long name',
         shortName: 'short name',

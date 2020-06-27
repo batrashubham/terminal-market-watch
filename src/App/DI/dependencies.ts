@@ -1,6 +1,6 @@
-const TYPES = {
+const Deps = {
     StockDataProvider: Symbol.for('StockDataProvider'),
     StockDataTransformer: Symbol.for('StockDataTransformer'),
 };
 
-export { TYPES };
+export { Deps };

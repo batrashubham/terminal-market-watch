@@ -28,7 +28,7 @@ const result = {
 describe('YahooStockProvider ', () => {
     it('should call yahoo finance api', async () => {
         mockedAxios.get.mockImplementationOnce(() => Promise.resolve(result));
-        await new YahooStockDataProvider(mockTransformer).fetchStockData(stockCode);
+        await new YahooStockDataProvider(mockTransformer).getQuote(stockCode);
         expect(mockedAxios.get).toHaveBeenCalledWith(YahooFinanceUrl, {
             params: {
                 corsDomain: 'finance.yahoo.com',

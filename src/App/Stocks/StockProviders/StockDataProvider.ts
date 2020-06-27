@@ -1,5 +1,5 @@
-import { StockData } from './types';
+import { StockQuote } from './types';
 
 export default interface StockDataProvider {
-    fetchStockData(stockCode: string): Promise<StockData>;
+    getQuote(stockCode: string): Promise<StockQuote>;
 }

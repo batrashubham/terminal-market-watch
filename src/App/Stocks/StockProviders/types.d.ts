@@ -1,4 +1,4 @@
-export interface StockData {
+export interface StockQuote {
     currency: string;
     shortName: string;
     longName: string;

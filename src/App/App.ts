@@ -1,31 +1,31 @@
 import { inject, injectable } from 'inversify';
 import { AppTitle } from './Constants/constants';
 import Options from './Commands/options';
-import { StockData } from './Stocks/StockProviders/types';
-import Stocks from './Stocks/Stocks';
+import { StockQuote } from './Stocks/StockProviders/types';
+import StockService from './Stocks/StockService';
 import { getTextWrappedInBox } from './View/boxUtils';
 import { getPrimaryColoredText } from './View/textUtils';
-import { stringifyStock } from './Stocks/stockUtils';
+import { stringifyStockQuote } from './Stocks/stockUtils';
 
 @injectable()
 export default class App {
-    constructor(@inject(Stocks) private stocks: Stocks) {}
+    constructor(@inject(StockService) private stocks: StockService) {}
 
     run(): void {
         const options = Options.getOptions();
 
         this.printAppTitle();
-        this.stocks.fetchStockData(options.stock as string).then(this.displayStockData());
+        this.stocks.getQuote(options.stock as string).then(this.displayStockData());
     }
 
-    private displayStockData(): (value: StockData) => void {
+    private displayStockData(): (value: StockQuote) => void {
         return (sd) => {
-            const stringifiedStock = stringifyStock(sd);
+            const stringifiedStock = stringifyStockQuote(sd);
             console.log(getTextWrappedInBox(stringifiedStock));
         };
     }
 
-    private printAppTitle() {
+    private printAppTitle(): void {
         const title = getPrimaryColoredText(AppTitle);
         console.log(getTextWrappedInBox(title));
     }
