@@ -2,7 +2,6 @@ import { inject, injectable } from 'inversify';
 import Options from './Commands/options';
 import { StockQuote } from './Stocks/StockProviders/types';
 import StockService from './Stocks/StockService';
-import { getTextWrappedInBox } from './View/boxUtils';
 import { stringifyStockQuote } from './Stocks/stockUtils';
 import { renderAppBanner } from './View/AppBanner';
 
@@ -23,7 +22,7 @@ export default class App {
     private displayStockData(): (value: StockQuote) => void {
         return (sd) => {
             const stringifiedStock = stringifyStockQuote(sd);
-            console.log(getTextWrappedInBox(stringifiedStock));
+            console.log(stringifiedStock);
         };
     }
 }

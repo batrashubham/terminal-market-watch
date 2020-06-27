@@ -1,8 +1,8 @@
-import { getPrimaryColoredText } from './textUtils';
 import { AppTitle } from '../Constants/constants';
 import boxen, { BorderStyle, Options } from 'boxen';
+import chalk from 'chalk';
 
-const title = getPrimaryColoredText(AppTitle);
+const title = chalk.greenBright.bold(AppTitle);
 
 const boxenOptions: Options = {
     padding: 1,
