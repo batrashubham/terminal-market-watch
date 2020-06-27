@@ -1,4 +1,4 @@
-import Options from './options';
+import Options from './Commands/options';
 import { getPrimaryColoredText } from './View/textUtils';
 import { getTextWrappedInBox } from './View/boxUtils';
 import Stocks from './Stocks/Stocks';
