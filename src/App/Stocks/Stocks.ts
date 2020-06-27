@@ -7,6 +7,7 @@ import { TYPES } from '../DI/types';
 @injectable()
 export default class Stocks {
     constructor(@inject(TYPES.StockDataProvider) private stockDataProvider: StockDataProvider) {}
+
     async fetchStockData(stockCode: string): Promise<StockData> {
         return this.stockDataProvider.fetchStockData(stockCode);
     }

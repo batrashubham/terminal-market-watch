@@ -10,6 +10,7 @@ import { injectable, inject } from 'inversify';
 @injectable()
 export default class App {
     constructor(@inject(Stocks) private stocks: Stocks) {}
+
     run(): void {
         const options = Options.getOptions();
 
