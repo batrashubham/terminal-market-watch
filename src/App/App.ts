@@ -1,11 +1,10 @@
 import { inject, injectable } from 'inversify';
-import { AppTitle } from './Constants/constants';
 import Options from './Commands/options';
 import { StockQuote } from './Stocks/StockProviders/types';
 import StockService from './Stocks/StockService';
 import { getTextWrappedInBox } from './View/boxUtils';
-import { getPrimaryColoredText } from './View/textUtils';
 import { stringifyStockQuote } from './Stocks/stockUtils';
+import { renderAppBanner } from './View/AppBanner';
 
 @injectable()
 export default class App {
@@ -17,8 +16,7 @@ export default class App {
 
     run(): void {
         const options = Options.getOptions();
-
-        this.printAppTitle();
+        renderAppBanner();
         this._stockService.getQuote(options.stock as string).then(this.displayStockData());
     }
 
@@ -27,10 +25,5 @@ export default class App {
             const stringifiedStock = stringifyStockQuote(sd);
             console.log(getTextWrappedInBox(stringifiedStock));
         };
-    }
-
-    private printAppTitle(): void {
-        const title = getPrimaryColoredText(AppTitle);
-        console.log(getTextWrappedInBox(title));
     }
 }
