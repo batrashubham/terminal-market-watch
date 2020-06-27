@@ -9,13 +9,17 @@ import { stringifyStockQuote } from './Stocks/stockUtils';
 
 @injectable()
 export default class App {
-    constructor(@inject(StockService) private stocks: StockService) {}
+    private _stockService: StockService;
+
+    constructor(@inject(StockService) stockService: StockService) {
+        this._stockService = stockService;
+    }
 
     run(): void {
         const options = Options.getOptions();
 
         this.printAppTitle();
-        this.stocks.getQuote(options.stock as string).then(this.displayStockData());
+        this._stockService.getQuote(options.stock as string).then(this.displayStockData());
     }
 
     private displayStockData(): (value: StockQuote) => void {

@@ -5,9 +5,13 @@ import { Deps } from '../DI/dependencies';
 
 @injectable()
 export default class StockService {
-    constructor(@inject(Deps.StockDataProvider) private stockDataProvider: StockDataProvider) {}
+    private _stockDataProvider: StockDataProvider;
+
+    constructor(@inject(Deps.StockDataProvider) stockDataProvider: StockDataProvider) {
+        this._stockDataProvider = stockDataProvider;
+    }
 
     async getQuote(stockCode: string): Promise<StockQuote> {
-        return this.stockDataProvider.getQuote(stockCode);
+        return this._stockDataProvider.getQuote(stockCode);
     }
 }

@@ -10,11 +10,15 @@ export const YahooFinanceUrl = 'https://query1.finance.yahoo.com/v7/finance/quot
 
 @injectable()
 class YahooStockDataProvider implements StockDataProvider {
-    constructor(@inject(Deps.StockDataTransformer) private stockDataTransformer: StockDataTransformer) {}
+    private _stockDataTransformer: StockDataTransformer;
+
+    constructor(@inject(Deps.StockDataTransformer) stockDataTransformer: StockDataTransformer) {
+        this._stockDataTransformer = stockDataTransformer;
+    }
 
     public async getQuote(stockCode: string): Promise<StockQuote> {
         const result = await axios.get<YahooQuoteResponse>(YahooFinanceUrl, this.buildQueryParams(stockCode));
-        return this.stockDataTransformer.transform(result.data);
+        return this._stockDataTransformer.transform(result.data);
     }
 
     private buildQueryParams(stockCode: string): AxiosRequestConfig {

@@ -16,8 +16,7 @@ class AppContainer {
     }
 
     startApplication(): void {
-        const app = this.container.resolve(App);
-        app.run();
+        this.container.resolve(App).run();
     }
 
     private initialize(): void {
