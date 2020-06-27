@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { injectable, inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import StockDataProvider from '../StockDataProvider';
 import { YahooQuoteResponse } from './types';
 import { StockData } from '../types';

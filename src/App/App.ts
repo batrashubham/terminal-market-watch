@@ -1,11 +1,11 @@
-import Options from './Commands/options';
-import { getPrimaryColoredText } from './View/textUtils';
-import { getTextWrappedInBox } from './View/boxUtils';
-import Stocks from './Stocks/Stocks';
+import { inject, injectable } from 'inversify';
 import { AppTitle } from './Constants/constants';
-import { stringifyStock } from './Stocks/stockUtils';
+import Options from './Commands/options';
 import { StockData } from './Stocks/StockProviders/types';
-import { injectable, inject } from 'inversify';
+import Stocks from './Stocks/Stocks';
+import { getTextWrappedInBox } from './View/boxUtils';
+import { getPrimaryColoredText } from './View/textUtils';
+import { stringifyStock } from './Stocks/stockUtils';
 
 @injectable()
 export default class App {

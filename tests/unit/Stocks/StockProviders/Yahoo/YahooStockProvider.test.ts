@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import axios from 'axios';
 import YahooStockDataProvider, {
     YahooFinanceUrl,
 } from '../../../../../src/App/Stocks/StockProviders/Yahoo/YahooStockDataProvider';
+import axios from 'axios';
 
 jest.mock('axios');
 jest.mock('../../../../../src/App/Stocks/StockProviders/StockDataTransformer');

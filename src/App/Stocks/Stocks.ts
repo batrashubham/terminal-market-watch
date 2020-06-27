@@ -1,6 +1,6 @@
 import YahooStockDataProvider from './StockProviders/Yahoo/YahooStockDataProvider';
 import { StockData } from './StockProviders/types';
-import { injectable, inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 import StockDataProvider from './StockProviders/StockDataProvider';
 import { TYPES } from '../DI/types';
 

@@ -1,6 +1,6 @@
-import { YahooQuoteResponse } from '../../../../../src/App/Stocks/StockProviders/Yahoo/types';
 import { StockData } from '../../../../../src/App/Stocks/StockProviders/types';
 import YahooDataTransformer from '../../../../../src/App/Stocks/StockProviders/Yahoo/YahooDataTransformer';
+import { YahooQuoteResponse } from '../../../../../src/App/Stocks/StockProviders/Yahoo/types';
 
 describe('YahooDataTransformer', () => {
     const yahooData: YahooQuoteResponse = {
