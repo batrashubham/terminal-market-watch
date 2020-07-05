@@ -4,7 +4,7 @@ import YahooStockDataSource from '../Services/Stocks/StockDataSource/Yahoo/Yahoo
 import StockDataTransformer from '../Services/Stocks/StockDataSource/StockDataTransformer';
 import YahooDataTransformer from '../Services/Stocks/StockDataSource/Yahoo/YahooDataTransformer';
 import StockServiceImpl from '../Services/Stocks/StockServiceImpl';
-import Quote from '../Cli/Commands/quote';
+import QuoteCommand from '../Cli/Commands/Quote/QuoteCommand';
 import CliExecutor from '../Cli/CliExecutor';
 import BaseAppContainer from './BaseAppContainer';
 import AppExecutor from '../AppExecutor';
@@ -17,7 +17,7 @@ export default class CliAppContainer extends BaseAppContainer {
     }
 
     private initializeCLI(): void {
-        this.container.bind<Quote>(Quote).toSelf();
+        this.container.bind<QuoteCommand>(QuoteCommand).toSelf();
         this.container.bind<AppExecutor>(Deps.AppExecutor).to(CliExecutor);
     }
 

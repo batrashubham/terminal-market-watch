@@ -1,12 +1,13 @@
 import { injectable, inject } from 'inversify';
-import { StockQuote } from '../../Services/Stocks/StockDataSource/types';
-import { stringifyStockQuote } from '../../Services/Stocks/stockUtils';
+import { StockQuote } from '../../../Services/Stocks/StockDataSource/types';
+import { stringifyStockQuote } from '../../../Services/Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
-import { Deps } from '../../DI/dependencies';
-import StockService from '../../Services/Stocks/StockService';
+import { Deps } from '../../../DI/dependencies';
+import StockService from '../../../Services/Stocks/StockService';
+import { QuoteArgs } from './Types';
 
 @injectable()
-export default class Quote {
+export default class QuoteCommand {
     private _stockService: StockService;
 
     constructor(@inject(Deps.StockService) stockService: StockService) {
@@ -29,8 +30,4 @@ export default class Quote {
             console.log(stringifiedStock);
         };
     }
-}
-
-interface QuoteArgs {
-    stockSymbol: string;
 }
