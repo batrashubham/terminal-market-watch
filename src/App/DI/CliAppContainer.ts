@@ -4,18 +4,19 @@ import YahooStockDataProvider from '../Stocks/StockProviders/Yahoo/YahooStockDat
 import StockDataTransformer from '../Stocks/StockProviders/StockDataTransformer';
 import YahooDataTransformer from '../Stocks/StockProviders/Yahoo/YahooDataTransformer';
 import StockService from '../Stocks/StockService';
-import QuoteCommand from '../Cli/Commands/quote';
+import Quote from '../Cli/Commands/quote';
 import CliExecutor from '../Cli/CliExecutor';
 import BaseAppContainer from './BaseAppContainer';
+import AppExecutor from '../AppExecutor';
 
-class CliAppContainer extends BaseAppContainer {
+export default class CliAppContainer extends BaseAppContainer {
     initialize(): void {
         this.initializeStockBindinds();
         this.initializeCLI();
     }
 
     private initializeCLI(): void {
-        this.container.bind<QuoteCommand>(QuoteCommand).toSelf();
+        this.container.bind<Quote>(Quote).toSelf();
         this.container.bind<AppExecutor>(Deps.AppExecutor).to(CliExecutor);
     }
 
@@ -25,5 +26,3 @@ class CliAppContainer extends BaseAppContainer {
         this.container.bind<StockDataTransformer>(Deps.StockDataTransformer).to(YahooDataTransformer);
     }
 }
-
-export default CliAppContainer;

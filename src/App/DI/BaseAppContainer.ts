@@ -1,7 +1,7 @@
 import { Container } from 'inversify';
 import App from '../App';
 
-abstract class BaseAppContainer {
+export default abstract class BaseAppContainer {
     protected container: Container;
 
     constructor() {
@@ -16,5 +16,3 @@ abstract class BaseAppContainer {
         this.container.resolve(App).run();
     }
 }
-
-export default BaseAppContainer;

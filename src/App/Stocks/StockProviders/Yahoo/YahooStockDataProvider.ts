@@ -9,7 +9,7 @@ import { Deps } from '../../../DI/dependencies';
 export const YahooFinanceUrl = 'https://query1.finance.yahoo.com/v7/finance/quote';
 
 @injectable()
-class YahooStockDataProvider implements StockDataProvider {
+export default class YahooStockDataProvider implements StockDataProvider {
     private _stockDataTransformer: StockDataTransformer;
 
     constructor(@inject(Deps.StockDataTransformer) stockDataTransformer: StockDataTransformer) {
@@ -30,4 +30,3 @@ class YahooStockDataProvider implements StockDataProvider {
         };
     }
 }
-export default YahooStockDataProvider;

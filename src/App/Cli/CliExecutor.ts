@@ -1,15 +1,14 @@
 import yargs from 'yargs';
-import QuoteCommand from './Commands/quote';
+import Quote from './Commands/quote';
 import { injectable, inject } from 'inversify';
+import AppExecutor from '../AppExecutor';
 
 @injectable()
-class CliExecutor implements AppExecutor {
-    @inject(QuoteCommand)
-    private _quoteCommand!: QuoteCommand;
+export default class CliExecutor implements AppExecutor {
+    @inject(Quote)
+    private _quoteCommand!: Quote;
 
     execute(): void {
         yargs.command(this._quoteCommand.buildCommandObj()).demandCommand().help().argv;
     }
 }
-
-export default CliExecutor;

@@ -1,5 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { Deps } from './DI/dependencies';
+import AppExecutor from './AppExecutor';
 
 @injectable()
 export default class App {

@@ -4,12 +4,8 @@ import { StockQuote } from '../../Stocks/StockProviders/types';
 import { stringifyStockQuote } from '../../Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
 
-interface QuoteArgs {
-    stockSymbol: string;
-}
-
 @injectable()
-class QuoteCommand {
+export default class Quote {
     private _stockService: StockService;
 
     constructor(@inject(StockService) stockService: StockService) {
@@ -34,4 +30,6 @@ class QuoteCommand {
     }
 }
 
-export default QuoteCommand;
+interface QuoteArgs {
+    stockSymbol: string;
+}
