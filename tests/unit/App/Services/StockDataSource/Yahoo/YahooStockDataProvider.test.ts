@@ -11,14 +11,14 @@ const mockTransformer = {
     transform: jest.fn(),
 };
 
-const stockCode = 'AAPL';
+const stockSymbol = 'AAPL';
 
 const result = {
     data: {
         quoteResponse: {
             result: [
                 {
-                    symbol: 'ABC',
+                    symbol: stockSymbol,
                 },
             ],
         },
@@ -31,17 +31,17 @@ describe('YahooStockDataProvider ', () => {
             mockedAxios.get.mockImplementationOnce(() => Promise.resolve(result));
         });
         it('should call yahoo finance api', async () => {
-            await new YahooStockDataSource(mockTransformer).getQuote(stockCode);
+            await new YahooStockDataSource(mockTransformer).getQuote(stockSymbol);
             expect(mockedAxios.get).toHaveBeenCalledWith(YahooFinanceUrl, {
                 params: {
                     corsDomain: 'finance.yahoo.com',
-                    symbols: stockCode,
+                    symbols: stockSymbol,
                 },
             });
         });
 
         it('should call data transform function', async () => {
-            await new YahooStockDataSource(mockTransformer).getQuote(stockCode);
+            await new YahooStockDataSource(mockTransformer).getQuote(stockSymbol);
             expect(mockTransformer.transform).toBeCalledWith(result.data);
         });
     });
