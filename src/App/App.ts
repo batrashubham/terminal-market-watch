@@ -4,8 +4,11 @@ import AppExecutor from './AppExecutor';
 
 @injectable()
 export default class App {
-    @inject(Deps.AppExecutor)
     private _executor!: AppExecutor;
+
+    constructor(@inject(Deps.AppExecutor) executor: AppExecutor) {
+        this._executor = executor;
+    }
 
     run(): void {
         this._executor.execute();
