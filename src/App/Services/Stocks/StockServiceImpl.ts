@@ -6,13 +6,13 @@ import StockService from './StockService';
 
 @injectable()
 export default class StockServiceImpl implements StockService {
-    private _stockDataProvider: StockDataSource;
+    private _stockDataSource: StockDataSource;
 
     constructor(@inject(Deps.StockDataSource) stockDataProvider: StockDataSource) {
-        this._stockDataProvider = stockDataProvider;
+        this._stockDataSource = stockDataProvider;
     }
 
     async getQuote(stockCode: string): Promise<StockQuote> {
-        return this._stockDataProvider.getQuote(stockCode);
+        return this._stockDataSource.getQuote(stockCode);
     }
 }
