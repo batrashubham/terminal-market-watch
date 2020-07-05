@@ -1,0 +1,3 @@
+interface AppExecutor {
+    execute(): void;
+}

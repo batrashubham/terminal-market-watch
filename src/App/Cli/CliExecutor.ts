@@ -3,7 +3,7 @@ import QuoteCommand from './Commands/quote';
 import { injectable, inject } from 'inversify';
 
 @injectable()
-class Cli {
+class CliExecutor implements AppExecutor {
     @inject(QuoteCommand)
     private _quoteCommand!: QuoteCommand;
 
@@ -12,4 +12,4 @@ class Cli {
     }
 }
 
-export default Cli;
+export default CliExecutor;

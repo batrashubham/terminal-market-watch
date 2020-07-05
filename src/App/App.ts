@@ -1,14 +1,12 @@
 import { inject, injectable } from 'inversify';
-import { renderAppBanner } from './View/AppBanner';
-import Cli from './Cli/cli';
+import { Deps } from './DI/dependencies';
 
 @injectable()
 export default class App {
-    @inject(Cli)
-    private _cli!: Cli;
+    @inject(Deps.AppExecutor)
+    private _executor!: AppExecutor;
 
     run(): void {
-        renderAppBanner();
-        this._cli.execute();
+        this._executor.execute();
     }
 }

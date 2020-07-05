@@ -1,4 +1,4 @@
 import 'reflect-metadata';
-import AppContainer from './App/DI/AppContainer';
+import CliAppContainer from './App/DI/CliAppContainer';
 
-new AppContainer().startApplication();
+new CliAppContainer().startApplication();
