@@ -1,11 +1,11 @@
 import 'reflect-metadata';
-import YahooStockDataProvider, {
+import YahooStockDataSource, {
     YahooFinanceUrl,
-} from '../../../../../src/App/Stocks/StockProviders/Yahoo/YahooStockDataProvider';
+} from '../../../../../src/App/Services/Stocks/StockDataSource/Yahoo/YahooStockDataSource';
 import axios from 'axios';
 
 jest.mock('axios');
-jest.mock('../../../../../src/App/Stocks/StockProviders/StockDataTransformer');
+jest.mock('../../../../../src/App/Services/Stocks/StockDataSource/StockDataTransformer');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 const mockTransformer = {
     transform: jest.fn(),
@@ -31,7 +31,7 @@ describe('YahooStockDataProvider ', () => {
             mockedAxios.get.mockImplementationOnce(() => Promise.resolve(result));
         });
         it('should call yahoo finance api', async () => {
-            await new YahooStockDataProvider(mockTransformer).getQuote(stockCode);
+            await new YahooStockDataSource(mockTransformer).getQuote(stockCode);
             expect(mockedAxios.get).toHaveBeenCalledWith(YahooFinanceUrl, {
                 params: {
                     corsDomain: 'finance.yahoo.com',
@@ -41,7 +41,7 @@ describe('YahooStockDataProvider ', () => {
         });
 
         it('should call data transform function', async () => {
-            await new YahooStockDataProvider(mockTransformer).getQuote(stockCode);
+            await new YahooStockDataSource(mockTransformer).getQuote(stockCode);
             expect(mockTransformer.transform).toBeCalledWith(result.data);
         });
     });

@@ -1,4 +1,4 @@
-import { StockQuote } from './StockProviders/types';
+import { StockQuote } from './StockDataSource/types';
 
 export function stringifyStockQuote(stockQuote: StockQuote): string {
     return `Name: ${stockQuote.longName}\n

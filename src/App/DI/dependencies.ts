@@ -1,5 +1,5 @@
 export const Deps = {
-    StockDataProvider: Symbol.for('StockDataProvider'),
+    StockDataSource: Symbol.for('StockDataSource'),
     StockDataTransformer: Symbol.for('StockDataTransformer'),
     AppExecutor: Symbol.for('AppExecutor'),
 };

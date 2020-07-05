@@ -1,9 +1,9 @@
 import { Deps } from './dependencies';
-import StockDataProvider from '../Stocks/StockProviders/StockDataProvider';
-import YahooStockDataProvider from '../Stocks/StockProviders/Yahoo/YahooStockDataProvider';
-import StockDataTransformer from '../Stocks/StockProviders/StockDataTransformer';
-import YahooDataTransformer from '../Stocks/StockProviders/Yahoo/YahooDataTransformer';
-import StockService from '../Stocks/StockService';
+import StockDataSource from '../Services/Stocks/StockDataSource/StockDataSource';
+import YahooStockDataSource from '../Services/Stocks/StockDataSource/Yahoo/YahooStockDataSource';
+import StockDataTransformer from '../Services/Stocks/StockDataSource/StockDataTransformer';
+import YahooDataTransformer from '../Services/Stocks/StockDataSource/Yahoo/YahooDataTransformer';
+import StockService from '../Services/Stocks/StockService';
 import Quote from '../Cli/Commands/quote';
 import CliExecutor from '../Cli/CliExecutor';
 import BaseAppContainer from './BaseAppContainer';
@@ -22,7 +22,7 @@ export default class CliAppContainer extends BaseAppContainer {
 
     private initializeStockBindinds(): void {
         this.container.bind<StockService>(StockService).toSelf();
-        this.container.bind<StockDataProvider>(Deps.StockDataProvider).to(YahooStockDataProvider);
+        this.container.bind<StockDataSource>(Deps.StockDataSource).to(YahooStockDataSource);
         this.container.bind<StockDataTransformer>(Deps.StockDataTransformer).to(YahooDataTransformer);
     }
 }

@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
-import StockService from '../../Stocks/StockService';
-import { StockQuote } from '../../Stocks/StockProviders/types';
-import { stringifyStockQuote } from '../../Stocks/stockUtils';
+import StockService from '../../Services/Stocks/StockService';
+import { StockQuote } from '../../Services/Stocks/StockDataSource/types';
+import { stringifyStockQuote } from '../../Services/Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
 
 @injectable()

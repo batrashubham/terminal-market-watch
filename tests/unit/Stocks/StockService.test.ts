@@ -1,11 +1,11 @@
 import 'reflect-metadata';
-import StockService from '../../../src/App/Stocks/StockService';
-import StockDataProvider from '../../../src/App/Stocks/StockProviders/StockDataProvider';
+import StockService from '../../../src/App/Services/Stocks/StockService';
+import StockDataSource from '../../../src/App/Services/Stocks/StockDataSource/StockDataSource';
 
 const stockCode = 'ABC';
 
 let stockService: StockService;
-let mockStockDataProvider: StockDataProvider;
+let mockStockDataProvider: StockDataSource;
 
 describe('StockService', () => {
     beforeEach(() => {
