@@ -1,14 +1,15 @@
 import { injectable, inject } from 'inversify';
-import StockService from '../../Services/Stocks/StockService';
 import { StockQuote } from '../../Services/Stocks/StockDataSource/types';
 import { stringifyStockQuote } from '../../Services/Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
+import { Deps } from '../../DI/dependencies';
+import StockService from '../../Services/Stocks/StockService';
 
 @injectable()
 export default class Quote {
     private _stockService: StockService;
 
-    constructor(@inject(StockService) stockService: StockService) {
+    constructor(@inject(Deps.StockService) stockService: StockService) {
         this._stockService = stockService;
     }
 
