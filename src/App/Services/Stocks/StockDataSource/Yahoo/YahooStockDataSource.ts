@@ -17,8 +17,17 @@ export default class YahooStockDataSource implements StockDataSource {
     }
 
     public async getQuote(stockSymbol: string): Promise<StockQuote> {
-        const result = await axios.get<YahooQuoteResponse>(YahooFinanceUrl, this.buildQueryParams(stockSymbol));
-        return this._stockDataTransformer.transform(result.data);
+        try {
+            const result = await axios.get<YahooQuoteResponse>(YahooFinanceUrl, this.buildQueryParams(stockSymbol));
+            if (result.data.quoteResponse.result.length == 0) {
+                return Promise.reject({
+                    message: 'No data found for ' + stockSymbol,
+                });
+            }
+            return Promise.resolve(this._stockDataTransformer.transform(result.data));
+        } catch (err) {
+            return Promise.reject({ message: 'An error occured while fetching data for ' + stockSymbol, error: err });
+        }
     }
 
     private buildQueryParams(stockSymbol: string): AxiosRequestConfig {

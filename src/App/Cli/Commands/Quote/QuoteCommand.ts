@@ -19,7 +19,12 @@ export default class QuoteCommand {
             command: 'quote <stockSymbol>',
             describe: 'fetch latest quote for stock',
             handler: (args: Arguments<QuoteArgs>): void => {
-                this._stockService.getQuote(args.stockSymbol as string).then(this.displayStockData());
+                this._stockService
+                    .getQuote(args.stockSymbol as string)
+                    .then(this.displayStockData())
+                    .catch((err) => {
+                        console.log(err);
+                    });
             },
         };
     }

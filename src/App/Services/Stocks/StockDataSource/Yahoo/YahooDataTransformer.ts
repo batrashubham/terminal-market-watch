@@ -6,10 +6,10 @@ import { injectable } from 'inversify';
 
 @injectable()
 export default class YahooDataTransformer implements StockDataTransformer {
-    transform(src: ProviderStockData): Promise<StockQuote> {
+    transform(src: ProviderStockData): StockQuote {
         const yahooData = src as YahooQuoteResponse;
-        return Promise.resolve({
+        return {
             ...yahooData.quoteResponse?.result[0],
-        });
+        };
     }
 }
