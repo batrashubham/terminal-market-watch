@@ -1,11 +1,10 @@
 import 'reflect-metadata';
 import YahooStockDataSource, {
     YahooFinanceUrl,
-} from '../../../../../../src/App/Services/Stocks/StockDataSource/Yahoo/YahooStockDataSource';
+} from '../../../../../../../src/App/Services/Stocks/StockDataSource/Yahoo/YahooStockDataSource';
 import axios from 'axios';
 
 jest.mock('axios');
-jest.mock('../../../../../../src/App/Services/Stocks/StockDataSource/StockDataTransformer');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 const mockTransformer = {
     transform: jest.fn(),
