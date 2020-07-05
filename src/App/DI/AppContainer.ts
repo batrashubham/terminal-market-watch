@@ -6,6 +6,8 @@ import StockDataTransformer from '../Stocks/StockProviders/StockDataTransformer'
 import YahooDataTransformer from '../Stocks/StockProviders/Yahoo/YahooDataTransformer';
 import StockService from '../Stocks/StockService';
 import App from '../App';
+import QuoteCommand from '../Cli/Commands/quote';
+import Cli from '../Cli/cli';
 
 class AppContainer {
     private container: Container;
@@ -22,6 +24,12 @@ class AppContainer {
     private initialize(): void {
         this.initializeAppBindings();
         this.initializeStockBindinds();
+        this.initializeCLI();
+    }
+
+    private initializeCLI(): void {
+        this.container.bind<QuoteCommand>(QuoteCommand).toSelf();
+        this.container.bind<Cli>(Cli).toSelf();
     }
 
     private initializeStockBindinds(): void {
