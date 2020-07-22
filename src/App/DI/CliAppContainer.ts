@@ -9,6 +9,9 @@ import CliExecutor from '../Cli/CliExecutor';
 import BaseAppContainer from './BaseAppContainer';
 import AppExecutor from '../AppExecutor';
 import StockService from '../Services/Stocks/StockService';
+import WatchlistCommand from '../Cli/Commands/Watchlist/WatchlistCommand';
+import AddCommand from '../Cli/Commands/Watchlist/Add/AddCommand';
+import ListCommand from '../Cli/Commands/Watchlist/List/ListCommand';
 
 export default class CliAppContainer extends BaseAppContainer {
     initialize(): void {
@@ -18,6 +21,9 @@ export default class CliAppContainer extends BaseAppContainer {
 
     private initializeCLI(): void {
         this.container.bind<QuoteCommand>(QuoteCommand).toSelf();
+        this.container.bind<WatchlistCommand>(WatchlistCommand).toSelf();
+        this.container.bind<AddCommand>(AddCommand).toSelf();
+        this.container.bind<ListCommand>(ListCommand).toSelf();
         this.container.bind<AppExecutor>(Deps.AppExecutor).to(CliExecutor);
     }
 
