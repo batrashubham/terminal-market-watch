@@ -18,14 +18,18 @@ export default class QuoteCommand {
         return {
             command: 'quote <stockSymbol>',
             describe: 'fetch latest quote for stock',
-            handler: (args: Arguments<QuoteArgs>): void => {
-                this._stockService
-                    .getQuote(args.stockSymbol as string)
-                    .then(this.displayStockData())
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            },
+            handler: this.createQuoteCommandHandler(),
+        };
+    }
+
+    private createQuoteCommandHandler(): (args: Arguments<QuoteArgs>) => void {
+        return (args: Arguments<QuoteArgs>): void => {
+            this._stockService
+                .getQuote(args.stockSymbol as string)
+                .then(this.displayStockData())
+                .catch((err) => {
+                    console.log(err);
+                });
         };
     }
 
