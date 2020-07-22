@@ -6,6 +6,7 @@ import { Arguments } from 'yargs';
 import { StockQuote } from '../../../../../../src/App/Services/Stocks/StockDataSource/types';
 
 describe('QuoteCommand', () => {
+    console.log = jest.fn();
     const stockService: StockService = {
         getQuote: jest.fn((stockCode) => Promise.resolve({ symbol: stockCode } as StockQuote)),
     };
