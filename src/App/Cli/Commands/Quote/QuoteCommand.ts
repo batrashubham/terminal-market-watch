@@ -5,9 +5,10 @@ import { CommandModule, Arguments } from 'yargs';
 import { Deps } from '../../../DI/dependencies';
 import StockService from '../../../Services/Stocks/StockService';
 import { QuoteArgs } from './Types';
+import Command from '../Command';
 
 @injectable()
-export default class QuoteCommand {
+export default class QuoteCommand implements Command<unknown, QuoteArgs> {
     private _stockService: StockService;
 
     constructor(@inject(Deps.StockService) stockService: StockService) {

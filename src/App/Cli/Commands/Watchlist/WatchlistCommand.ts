@@ -1,16 +1,17 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { injectable, inject } from 'inversify';
 import { CommandModule } from 'yargs';
-import AddCommand from './Add/AddCommand';
-import ListCommand from './List/ListCommand';
+import WatchlistAddCommand from './Add/WatchlistAddCommand';
+import WatchlistListCommand from './List/WatchlistListCommand';
+import Command from '../Command';
 
 @injectable()
-export default class WatchlistCommand {
-    @inject(AddCommand)
-    private _addCommand!: AddCommand;
+export default class WatchlistCommand implements Command<unknown, unknown> {
+    @inject(WatchlistAddCommand)
+    private _addCommand!: WatchlistAddCommand;
 
-    @inject(ListCommand)
-    private _listCommand!: ListCommand;
+    @inject(WatchlistListCommand)
+    private _listCommand!: WatchlistListCommand;
 
     buildCommandObj(): CommandModule<unknown, unknown> {
         return {
