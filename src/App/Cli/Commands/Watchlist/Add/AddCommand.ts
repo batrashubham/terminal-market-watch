@@ -8,8 +8,7 @@ export default class AddCommand {
         return {
             command: 'add',
             describe: 'Add a watchlist.',
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            handler: (arg: unknown) => {
+            handler: () => {
                 console.log('Add watchlist.');
             },
         };

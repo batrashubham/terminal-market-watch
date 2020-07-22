@@ -7,8 +7,7 @@ export default class ListCommand {
         return {
             command: 'ls',
             describe: 'list all watchlists.',
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            handler: (arg: unknown) => {
+            handler: () => {
                 console.log('List Watchlists');
             },
         };
