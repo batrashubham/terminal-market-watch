@@ -6,19 +6,19 @@ import StockService from '../../../../../src/App/Services/Stocks/StockService';
 const stockCode = 'ABC';
 
 let stockService: StockService;
-let mockStockDataProvider: StockDataSource;
+let mockStockDataSource: StockDataSource;
 
 describe('StockService', () => {
     beforeEach(() => {
-        mockStockDataProvider = {
+        mockStockDataSource = {
             getQuote: jest.fn(),
         };
-        stockService = new StockServiceImpl(mockStockDataProvider);
+        stockService = new StockServiceImpl(mockStockDataSource);
     });
     describe('getQuote', () => {
-        it('should call getStockQuote of StockDataProvider', () => {
+        it('should call getStockQuote of StockDataSource', () => {
             stockService.getQuote(stockCode);
-            expect(mockStockDataProvider.getQuote).toHaveBeenCalledWith(stockCode);
+            expect(mockStockDataSource.getQuote).toHaveBeenCalledWith(stockCode);
         });
     });
 });

@@ -1,5 +1,5 @@
-import { ProviderStockData, StockQuote } from './types';
+import { SourceStockData, StockQuote } from './types';
 
 export default interface StockDataTransformer {
-    transform(src: ProviderStockData): StockQuote;
+    transform(src: SourceStockData): StockQuote;
 }

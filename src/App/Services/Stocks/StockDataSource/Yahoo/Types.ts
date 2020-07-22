@@ -1,4 +1,4 @@
-import { ProviderStockData } from '../types';
+import { SourceStockData } from '../types';
 
 export interface YahooStockData {
     currency: string;
@@ -22,6 +22,6 @@ export interface YahooResult {
     result: Array<YahooStockData>;
 }
 
-export interface YahooQuoteResponse extends ProviderStockData {
+export interface YahooQuoteResponse extends SourceStockData {
     quoteResponse: YahooResult;
 }

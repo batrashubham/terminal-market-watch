@@ -8,8 +8,8 @@ import StockService from './StockService';
 export default class StockServiceImpl implements StockService {
     private _stockDataSource: StockDataSource;
 
-    constructor(@inject(Deps.StockDataSource) stockDataProvider: StockDataSource) {
-        this._stockDataSource = stockDataProvider;
+    constructor(@inject(Deps.StockDataSource) stockDataSource: StockDataSource) {
+        this._stockDataSource = stockDataSource;
     }
 
     async getQuote(stockCode: string): Promise<StockQuote> {

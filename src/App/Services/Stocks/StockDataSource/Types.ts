@@ -16,4 +16,4 @@ export interface StockQuote {
     symbol: string;
 }
 
-export abstract class ProviderStockData {}
+export abstract class SourceStockData {}

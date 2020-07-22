@@ -24,7 +24,7 @@ const result = {
     },
 };
 
-describe('YahooStockDataProvider ', () => {
+describe('YahooStockDataSource ', () => {
     describe('getStockQuote', () => {
         beforeEach(() => {
             mockedAxios.get.mockImplementationOnce(() => Promise.resolve(result));
