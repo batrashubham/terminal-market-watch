@@ -41,7 +41,7 @@ describe('YahooStockDataProvider ', () => {
 
         it('should call data transform function', async () => {
             await new YahooStockDataSource(mockTransformer).getQuote(stockSymbol);
-            expect(mockTransformer.transform).toBeCalledWith(result.data);
+            expect(mockTransformer.transform).toHaveBeenCalledWith(result.data);
         });
     });
 });
