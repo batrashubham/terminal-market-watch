@@ -1,12 +1,12 @@
 import { inject, injectable } from 'inversify';
 import { Deps } from './DI/dependencies';
-import AppExecutor from './AppExecutor';
+import IAppExecutor from './IAppExecutor';
 
 @injectable()
 export default class App {
-    private _executor: AppExecutor;
+    private _executor: IAppExecutor;
 
-    constructor(@inject(Deps.AppExecutor) executor: AppExecutor) {
+    constructor(@inject(Deps.AppExecutor) executor: IAppExecutor) {
         this._executor = executor;
     }
 

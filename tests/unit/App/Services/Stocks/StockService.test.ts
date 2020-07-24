@@ -1,19 +1,19 @@
 import 'reflect-metadata';
-import StockServiceImpl from '../../../../../src/App/Services/Stocks/StockServiceImpl';
-import StockDataSource from '../../../../../src/App/Services/Stocks/StockDataSource/StockDataSource';
 import StockService from '../../../../../src/App/Services/Stocks/StockService';
+import IStockDataSource from '../../../../../src/App/Services/Stocks/StockDataSource/IStockDataSource';
+import IStockService from '../../../../../src/App/Services/Stocks/IStockService';
 
 const stockCode = 'ABC';
 
-let stockService: StockService;
-let mockStockDataSource: StockDataSource;
+let stockService: IStockService;
+let mockStockDataSource: IStockDataSource;
 
 describe('StockService', () => {
     beforeEach(() => {
         mockStockDataSource = {
             getQuote: jest.fn(),
         };
-        stockService = new StockServiceImpl(mockStockDataSource);
+        stockService = new StockService(mockStockDataSource);
     });
     describe('getQuote', () => {
         it('should call getStockQuote of StockDataSource', () => {

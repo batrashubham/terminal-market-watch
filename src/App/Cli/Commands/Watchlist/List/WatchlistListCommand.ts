@@ -1,9 +1,9 @@
 import { CommandModule } from 'yargs';
 import { injectable } from 'inversify';
-import Command from '../../Command';
+import ICommand from '../../ICommand';
 
 @injectable()
-export default class WatchlistListCommand implements Command<unknown, unknown> {
+export default class WatchlistListCommand implements ICommand<unknown, unknown> {
     buildCommandObj(): CommandModule<unknown, unknown> {
         return {
             command: 'ls',

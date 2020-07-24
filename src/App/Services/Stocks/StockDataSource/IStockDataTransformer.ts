@@ -1,5 +1,5 @@
 import { SourceStockData, StockQuote } from './types';
 
-export default interface StockDataTransformer {
+export default interface IStockDataTransformer {
     transform(src: SourceStockData): StockQuote;
 }

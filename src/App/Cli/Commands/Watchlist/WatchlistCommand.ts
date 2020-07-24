@@ -3,10 +3,10 @@ import { injectable, inject } from 'inversify';
 import { CommandModule } from 'yargs';
 import WatchlistAddCommand from './Add/WatchlistAddCommand';
 import WatchlistListCommand from './List/WatchlistListCommand';
-import Command from '../Command';
+import ICommand from '../ICommand';
 
 @injectable()
-export default class WatchlistCommand implements Command<unknown, unknown> {
+export default class WatchlistCommand implements ICommand<unknown, unknown> {
     @inject(WatchlistAddCommand)
     private _addCommand!: WatchlistAddCommand;
 

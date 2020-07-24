@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import App from '../../../src/App/App';
-import AppExecutor from '../../../src/App/AppExecutor';
+import IAppExecutor from '../../../src/App/IAppExecutor';
 
 describe('App', () => {
-    const mockExecutor: AppExecutor = {
+    const mockExecutor: IAppExecutor = {
         execute: jest.fn(),
     };
     it('should call execute method of executor', () => {

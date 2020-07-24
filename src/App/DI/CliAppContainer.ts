@@ -1,14 +1,14 @@
 import { Deps } from './dependencies';
-import StockDataSource from '../Services/Stocks/StockDataSource/StockDataSource';
+import IStockDataSource from '../Services/Stocks/StockDataSource/IStockDataSource';
 import YahooStockDataSource from '../Services/Stocks/StockDataSource/Yahoo/YahooStockDataSource';
-import StockDataTransformer from '../Services/Stocks/StockDataSource/StockDataTransformer';
+import IStockDataTransformer from '../Services/Stocks/StockDataSource/IStockDataTransformer';
 import YahooDataTransformer from '../Services/Stocks/StockDataSource/Yahoo/YahooDataTransformer';
-import StockServiceImpl from '../Services/Stocks/StockServiceImpl';
+import StockService from '../Services/Stocks/StockService';
 import QuoteCommand from '../Cli/Commands/Quote/QuoteCommand';
 import CliExecutor from '../Cli/CliExecutor';
 import BaseAppContainer from './BaseAppContainer';
-import AppExecutor from '../AppExecutor';
-import StockService from '../Services/Stocks/StockService';
+import IAppExecutor from '../IAppExecutor';
+import IStockService from '../Services/Stocks/IStockService';
 import WatchlistCommand from '../Cli/Commands/Watchlist/WatchlistCommand';
 import WatchlistAddCommand from '../Cli/Commands/Watchlist/Add/WatchlistAddCommand';
 import WatchlistListCommand from '../Cli/Commands/Watchlist/List/WatchlistListCommand';
@@ -24,12 +24,12 @@ export default class CliAppContainer extends BaseAppContainer {
         this.container.bind<WatchlistCommand>(WatchlistCommand).toSelf();
         this.container.bind<WatchlistAddCommand>(WatchlistAddCommand).toSelf();
         this.container.bind<WatchlistListCommand>(WatchlistListCommand).toSelf();
-        this.container.bind<AppExecutor>(Deps.AppExecutor).to(CliExecutor);
+        this.container.bind<IAppExecutor>(Deps.AppExecutor).to(CliExecutor);
     }
 
     private initializeStockBindinds(): void {
-        this.container.bind<StockService>(Deps.StockService).to(StockServiceImpl);
-        this.container.bind<StockDataSource>(Deps.StockDataSource).to(YahooStockDataSource);
-        this.container.bind<StockDataTransformer>(Deps.StockDataTransformer).to(YahooDataTransformer);
+        this.container.bind<IStockService>(Deps.StockService).to(StockService);
+        this.container.bind<IStockDataSource>(Deps.StockDataSource).to(YahooStockDataSource);
+        this.container.bind<IStockDataTransformer>(Deps.StockDataTransformer).to(YahooDataTransformer);
     }
 }

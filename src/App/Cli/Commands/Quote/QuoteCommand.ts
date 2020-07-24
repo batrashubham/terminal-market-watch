@@ -3,15 +3,15 @@ import { StockQuote } from '../../../Services/Stocks/StockDataSource/types';
 import { stringifyStockQuote } from '../../../Services/Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
 import { Deps } from '../../../DI/dependencies';
-import StockService from '../../../Services/Stocks/StockService';
+import IStockService from '../../../Services/Stocks/IStockService';
 import { QuoteArgs } from './Types';
-import Command from '../Command';
+import ICommand from '../ICommand';
 
 @injectable()
-export default class QuoteCommand implements Command<unknown, QuoteArgs> {
-    private _stockService: StockService;
+export default class QuoteCommand implements ICommand<unknown, QuoteArgs> {
+    private _stockService: IStockService;
 
-    constructor(@inject(Deps.StockService) stockService: StockService) {
+    constructor(@inject(Deps.StockService) stockService: IStockService) {
         this._stockService = stockService;
     }
 

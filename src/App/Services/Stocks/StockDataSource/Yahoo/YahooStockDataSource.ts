@@ -1,18 +1,18 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { inject, injectable } from 'inversify';
-import StockDataSource from '../StockDataSource';
+import IStockDataSource from '../IStockDataSource';
 import { YahooQuoteResponse } from './types';
 import { StockQuote } from '../types';
-import StockDataTransformer from '../StockDataTransformer';
+import IStockDataTransformer from '../IStockDataTransformer';
 import { Deps } from '../../../../DI/dependencies';
 
 export const YahooFinanceUrl = 'https://query1.finance.yahoo.com/v7/finance/quote';
 
 @injectable()
-export default class YahooStockDataSource implements StockDataSource {
-    private _stockDataTransformer: StockDataTransformer;
+export default class YahooStockDataSource implements IStockDataSource {
+    private _stockDataTransformer: IStockDataTransformer;
 
-    constructor(@inject(Deps.StockDataTransformer) stockDataTransformer: StockDataTransformer) {
+    constructor(@inject(Deps.StockDataTransformer) stockDataTransformer: IStockDataTransformer) {
         this._stockDataTransformer = stockDataTransformer;
     }
 
