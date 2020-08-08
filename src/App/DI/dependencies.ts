@@ -7,4 +7,5 @@ export const Deps = {
     WatchlistCommand: Symbol.for('WatchlistCommand'),
     WatchlistAddCommand: Symbol.for('WatchlistAddCommand'),
     WatchlistListCommand: Symbol.for('WatchlistListCommand'),
+    Storage: Symbol.for('Storage'),
 };
