@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import IStockDataTransformer from '../IStockDataTransformer';
-import { SourceStockData, StockQuote } from '../types';
-import { YahooQuoteResponse } from './types';
+import { SourceStockData, StockQuote } from '../Types';
+import { YahooQuoteResponse } from './Types';
 import { injectable } from 'inversify';
 
 @injectable()

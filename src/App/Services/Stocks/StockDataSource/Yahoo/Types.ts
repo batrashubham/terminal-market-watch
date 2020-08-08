@@ -1,4 +1,4 @@
-import { SourceStockData } from '../types';
+import { SourceStockData } from '../Types';
 
 export interface YahooStockData {
     currency: string;

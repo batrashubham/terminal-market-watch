@@ -3,7 +3,7 @@ import QuoteCommand from '../../../../../../src/App/Cli/Commands/Quote/QuoteComm
 import IStockService from '../../../../../../src/App/Services/Stocks/IStockService';
 import { QuoteArgs } from '../../../../../../src/App/Cli/Commands/Quote/Types';
 import { Arguments } from 'yargs';
-import { StockQuote } from '../../../../../../src/App/Services/Stocks/StockDataSource/types';
+import { StockQuote } from '../../../../../../src/App/Services/Stocks/StockDataSource/Types';
 
 describe('QuoteCommand', () => {
     console.log = jest.fn();

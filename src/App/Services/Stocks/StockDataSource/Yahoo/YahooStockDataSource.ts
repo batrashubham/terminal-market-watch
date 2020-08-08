@@ -1,8 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { inject, injectable } from 'inversify';
 import IStockDataSource from '../IStockDataSource';
-import { YahooQuoteResponse } from './types';
-import { StockQuote } from '../types';
+import { YahooQuoteResponse } from './Types';
+import { StockQuote } from '../Types';
 import IStockDataTransformer from '../IStockDataTransformer';
 import { Deps } from '../../../../DI/dependencies';
 

@@ -1,4 +1,4 @@
-import { StockQuote } from './StockDataSource/types';
+import { StockQuote } from './StockDataSource/Types';
 import { inject, injectable } from 'inversify';
 import IStockDataSource from './StockDataSource/IStockDataSource';
 import { Deps } from '../../DI/dependencies';

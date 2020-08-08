@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { StockQuote } from '../../../Services/Stocks/StockDataSource/types';
+import { StockQuote } from '../../../Services/Stocks/StockDataSource/Types';
 import { stringifyStockQuote } from '../../../Services/Stocks/stockUtils';
 import { CommandModule, Arguments } from 'yargs';
 import { Deps } from '../../../DI/dependencies';
