@@ -5,6 +5,7 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'production',
     entry: './src/index.ts',
+    externals: { sqlite3: 'commonjs sqlite3' },
     module: {
         rules: [
             {
