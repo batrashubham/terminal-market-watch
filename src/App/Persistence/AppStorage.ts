@@ -13,8 +13,8 @@ export default class AppStorage implements IStorage {
         this.createTables();
     }
 
-    getConnection(): void {
-        console.log('Get connection.');
+    getConnection(): Database {
+        return this._db;
     }
 
     private initializeDatabase(): void {
