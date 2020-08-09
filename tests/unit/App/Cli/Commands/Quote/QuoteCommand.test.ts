@@ -9,6 +9,7 @@ describe('QuoteCommand', () => {
     console.log = jest.fn();
     const stockService: IStockService = {
         getQuote: jest.fn((stockCode) => Promise.resolve({ symbol: stockCode } as StockQuote)),
+        validateStockSymbols: jest.fn(),
     };
     const args: Arguments<QuoteArgs> = {
         stockSymbol: 'AAPL',

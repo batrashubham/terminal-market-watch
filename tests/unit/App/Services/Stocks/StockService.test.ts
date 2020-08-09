@@ -12,6 +12,7 @@ describe('StockService', () => {
     beforeEach(() => {
         mockStockDataSource = {
             getQuote: jest.fn(),
+            validateStockSymbols: jest.fn(),
         };
         stockService = new StockService(mockStockDataSource);
     });

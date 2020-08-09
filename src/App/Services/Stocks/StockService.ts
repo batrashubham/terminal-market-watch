@@ -12,6 +12,10 @@ export default class StockService implements IStockService {
         this._stockDataSource = stockDataSource;
     }
 
+    validateStockSymbols(stocks: string): Promise<string[]> {
+        return this._stockDataSource.validateStockSymbols(stocks);
+    }
+
     async getQuote(stockCode: string): Promise<StockQuote> {
         return this._stockDataSource.getQuote(stockCode);
     }

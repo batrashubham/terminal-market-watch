@@ -25,3 +25,11 @@ export interface YahooResult {
 export interface YahooQuoteResponse extends SourceStockData {
     quoteResponse: YahooResult;
 }
+
+export interface YahooSymbolSearchResult {
+    nav: Array<Nav>;
+}
+
+export interface Nav {
+    symbols: Array<string>;
+}
