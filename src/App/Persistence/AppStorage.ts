@@ -30,10 +30,10 @@ export default class AppStorage implements IStorage {
 
     private createTables(): void {
         this._db.run(
-            'CREATE TABLE IF NOT EXISTS watchlist( id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(100) NOT NULL)',
+            'CREATE TABLE IF NOT EXISTS watchlist( id INTEGER PRIMARY KEY AUTOINCREMENT, name varchar(100) UNIQUE NOT NULL)',
         );
         this._db.run(
-            'CREATE TABLE IF NOT EXISTS watchlist_stocks( id INTEGER PRIMARY KEY AUTOINCREMENT, watchlist_id INTEGER NOT NULL, stock_code varchar(100) NOT NULL, FOREIGN KEY(watchlist_id) REFERENCES watchlist(id))',
+            'CREATE TABLE IF NOT EXISTS watchlist_stocks( id INTEGER PRIMARY KEY AUTOINCREMENT, watchlist_id INTEGER NOT NULL, stock_symbol varchar(100) NOT NULL, FOREIGN KEY(watchlist_id) REFERENCES watchlist(id))',
         );
     }
 }

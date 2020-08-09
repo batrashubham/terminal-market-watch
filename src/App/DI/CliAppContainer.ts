@@ -14,6 +14,8 @@ import WatchlistAddCommand from '../Cli/Commands/Watchlist/Add/WatchlistAddComma
 import WatchlistListCommand from '../Cli/Commands/Watchlist/List/WatchlistListCommand';
 import IStorage from '../Persistence/IStorage';
 import AppStorage from '../Persistence/AppStorage';
+import IRepository from '../Persistence/IRepository';
+import Repository from '../Persistence/Repository';
 
 export default class CliAppContainer extends BaseAppContainer {
     initialize(): void {
@@ -24,6 +26,7 @@ export default class CliAppContainer extends BaseAppContainer {
 
     private initializeStorage(): void {
         this.container.bind<IStorage>(Deps.Storage).to(AppStorage).inSingletonScope();
+        this.container.bind<IRepository>(Deps.Repository).to(Repository).inSingletonScope();
     }
 
     private initializeCLI(): void {

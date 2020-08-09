@@ -8,4 +8,5 @@ export const Deps = {
     WatchlistAddCommand: Symbol.for('WatchlistAddCommand'),
     WatchlistListCommand: Symbol.for('WatchlistListCommand'),
     Storage: Symbol.for('Storage'),
+    Repository: Symbol.for('Repository'),
 };
