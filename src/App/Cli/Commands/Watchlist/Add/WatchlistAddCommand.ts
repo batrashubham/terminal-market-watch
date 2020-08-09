@@ -17,7 +17,11 @@ export default class WatchlistAddCommand implements ICommand<unknown, unknown> {
         return {
             command: 'add',
             describe: 'Add a watchlist.',
-            handler: () => {},
+            handler: this.createCommandHandler(),
         };
+    }
+
+    private createCommandHandler(): () => void {
+        return () => {};
     }
 }
