@@ -17,6 +17,10 @@ export default class AppStorage implements IStorage {
         return this._db;
     }
 
+    close(): void {
+        this._db?.close();
+    }
+
     private initializeDatabase(): void {
         const homeEnv = process.platform === 'win32' ? process.env.HOMEPATH : process.env.HOME;
         const homeDir = homeEnv ? homeEnv.toString() : '';

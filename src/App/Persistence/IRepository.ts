@@ -1,4 +1,3 @@
 export default interface IRepository {
-    addWatchlist(name: string): void;
-    addWatchlistStock(watchlistId: number, stockSymbol: string): void;
+    addWatchListWithStocks(name: string, stocks: Array<string>): void;
 }

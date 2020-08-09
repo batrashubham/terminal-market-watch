@@ -9,6 +9,7 @@ describe('App', () => {
     };
     const mockStorage: IStorage = {
         getConnection: jest.fn(),
+        close: jest.fn(),
     };
     it('should call execute method of executor', () => {
         const app = new App(mockExecutor, mockStorage);
